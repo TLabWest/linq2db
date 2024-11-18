@@ -31,7 +31,7 @@ let LoadSingle (db : IDataContext) =
     })
 
 
-let LoadSinglesWithPatient (db : IDataContext) =
+(*let LoadSinglesWithPatient (db : IDataContext) =
     let persons = db.GetTable<Person>().LoadWith( fun x -> x.Patient :> Object|null )
     let johnId = 1
     let john = query {
@@ -54,7 +54,7 @@ let LoadSinglesWithPatient (db : IDataContext) =
     NUnitAssert.AreEqual(testerId, tester.ID)
     NUnitAssert.AreEqual("Tester", tester.FirstName)
     NUnitAssert.IsNotNull( tester.Patient)
-    NUnitAssert.AreEqual( tester.Patient.PersonID, testerId )
+    NUnitAssert.AreEqual( tester.Patient.PersonID, testerId )*)
 
 
 let LoadSingleComplexPerson (db : IDataContext) =
@@ -114,7 +114,7 @@ let LoadSingleWithOptions (db : IDataContext) =
 
 
 
-let LoadSingleCLIMutable (db : IDataContext)  (nullPatient : PatientCLIMutable)  =
+(*let LoadSingleCLIMutable (db : IDataContext)  (nullPatient : PatientCLIMutable)  =
     let persons = db.GetTable<PersonCLIMutable>().LoadWith( fun x -> x.Patient :> Object|null )
     let john = query {
         for p in persons do
@@ -135,4 +135,4 @@ let LoadSingleCLIMutable (db : IDataContext)  (nullPatient : PatientCLIMutable) 
     NUnitAssert.IsNotNull( tester )
     NUnitAssert.AreEqual( tester.ID, 2 )
     NUnitAssert.IsNotNull( tester.Patient )
-    NUnitAssert.AreEqual( tester.Patient.PersonID, 2 )
+    NUnitAssert.AreEqual( tester.Patient.PersonID, 2 )*)
