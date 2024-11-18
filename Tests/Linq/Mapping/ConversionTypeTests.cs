@@ -48,9 +48,9 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "OOO" },
-					new { ID = 2, Data = "HHH" },
-					new { ID = 3, Data = "VVV" }
+					new { ID = 1, Data = (string?)"OOO" },
+					new { ID = 2, Data = (string?)"HHH" },
+					new { ID = 3, Data = (string?)"VVV" }
 				],
 				t.OrderBy(r => r.ID).Select(r => new { r.ID, r.Data}));
 
@@ -60,9 +60,9 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "***OOO***"},
-					new { ID = 2, Data = "***HHH***"},
-					new { ID = 3, Data = "***VVV***"}
+					new { ID = 1, Data = (string?)"***OOO***"},
+					new { ID = 2, Data = (string?)"***HHH***"},
+					new { ID = 3, Data = (string?)"***VVV***"}
 				],
 				db1.GetTable<TrimTestTable>().OrderBy(_ => _.ID).Select(r => new { r.ID, r.Data}));
 		}
@@ -99,12 +99,12 @@ namespace Tests.Mapping
 			Debug.WriteLine(o.ToDiagnosticString());
 			Debug.WriteLine(t.ToDiagnosticString());
 
-			AreEqual([new { ID = 2, Data = "HHH" }], o.OrderBy(r => r.ID));
+			AreEqual([new { ID = 2, Data = (string?)"HHH" }], o.OrderBy(r => r.ID));
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "OOO" },
-					new { ID = 2, Data = "HHH" }
+					new { ID = 1, Data = (string?)"OOO" },
+					new { ID = 2, Data = (string?)"HHH" }
 				],
 				t.OrderBy(r => r.ID).Select(r => new { r.ID, r.Data}));
 
@@ -114,8 +114,8 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "***OOO***"},
-					new { ID = 2, Data = "***HHH***"}
+					new { ID = 1, Data = (string?)"***OOO***"},
+					new { ID = 2, Data = (string?)"***HHH***"}
 				],
 				db1.GetTable<TrimTestTable>().OrderBy(_ => _.ID).Select(r => new { r.ID, r.Data}));
 		}
@@ -133,7 +133,7 @@ namespace Tests.Mapping
 			Debug.WriteLine(t.ToDiagnosticString());
 
 			AreEqual(
-				[ new { ID = 1, Data = "OOO"} ],
+				[ new { ID = 1, Data = (string?)"OOO" } ],
 				t.OrderBy(r => r.ID).Select(r => new { r.ID, r.Data}));
 
 			using var db1 = GetDataContext(context);
@@ -141,7 +141,7 @@ namespace Tests.Mapping
 			Debug.WriteLine(db1.GetTable<TrimTestTable>().ToDiagnosticString());
 
 			AreEqual(
-				[ new { ID = 1, Data = "***OOO***"} ],
+				[ new { ID = 1, Data = (string?)"***OOO***" } ],
 				db1.GetTable<TrimTestTable>().OrderBy(_ => _.ID).Select(r => new { r.ID, r.Data}));
 		}
 
@@ -177,9 +177,9 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "OOO"},
-					new { ID = 2, Data = "SSS"},
-					new { ID = 3, Data = "III"},
+					new { ID = 1, Data = (string?)"OOO"},
+					new { ID = 2, Data = (string?)"SSS"},
+					new { ID = 3, Data = (string?)"III"},
 				],
 				t.OrderBy(r => r.ID).Select(r => new { r.ID, r.Data}));
 
@@ -189,9 +189,9 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "***OOO***"},
-					new { ID = 2, Data = "***SSS***"},
-					new { ID = 3, Data = "***III***"},
+					new { ID = 1, Data = (string?)"***OOO***"},
+					new { ID = 2, Data = (string?)"***SSS***"},
+					new { ID = 3, Data = (string?)"***III***"},
 				],
 				db1.GetTable<TrimTestTable>().OrderBy(_ => _.ID).Select(r => new { r.ID, r.Data}));
 		}
@@ -243,9 +243,9 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "OOO"},
-					new { ID = 2, Data = "SSS"},
-					new { ID = 3, Data = "III"},
+					new { ID = 1, Data = (string?)"OOO"},
+					new { ID = 2, Data = (string?)"SSS"},
+					new { ID = 3, Data = (string?)"III"},
 				],
 				t.OrderBy(r => r.ID).Select(r => new { r.ID, r.Data}));
 
@@ -255,9 +255,9 @@ namespace Tests.Mapping
 
 			AreEqual(
 				[
-					new { ID = 1, Data = "***OOO***"},
-					new { ID = 2, Data = "***SSS***"},
-					new { ID = 3, Data = "***III***"},
+					new { ID = 1, Data = (string?)"***OOO***"},
+					new { ID = 2, Data = (string?)"***SSS***"},
+					new { ID = 3, Data = (string?)"***III***"},
 				],
 				db1.GetTable<TrimTestTable>().OrderBy(_ => _.ID).Select(r => new { r.ID, r.Data}));
 		}

@@ -32,7 +32,7 @@ let LoadSingle (db : IDataContext) =
 
 
 let LoadSinglesWithPatient (db : IDataContext) =
-    let persons = db.GetTable<Person>().LoadWith( fun x -> x.Patient :> Object )
+    let persons = db.GetTable<Person>().LoadWith( fun x -> x.Patient :> Object|null )
     let johnId = 1
     let john = query {
         for p in persons do
@@ -115,7 +115,7 @@ let LoadSingleWithOptions (db : IDataContext) =
 
 
 let LoadSingleCLIMutable (db : IDataContext)  (nullPatient : PatientCLIMutable)  =
-    let persons = db.GetTable<PersonCLIMutable>().LoadWith( fun x -> x.Patient :> Object )
+    let persons = db.GetTable<PersonCLIMutable>().LoadWith( fun x -> x.Patient :> Object|null )
     let john = query {
         for p in persons do
         where (p.ID = 1)
