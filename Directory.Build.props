@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
-		<Version>5.4.1.0</Version>
+		<Version>5.4.2.0</Version>
 
 		<Description>LINQ to DB is a data access technology that provides a run-time infrastructure for managing relational data as objects.</Description>
 		<Authors>Igor Tkachev, Ilya Chudin, Svyatoslav Danyliv, Dmitry Lukashenko</Authors>
@@ -63,10 +63,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	
 		<PackageReference Include="PolySharp" />
+		<!--
 		<PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" />
 		<PackageReference Include="Meziantou.Analyzer" />
-
+	-->
 		<PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
