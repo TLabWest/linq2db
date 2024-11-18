@@ -95,7 +95,7 @@
 		<PackageVersion Include="System.Data.Odbc"                                      Version="6.0.1"         />
 		<PackageVersion Include="System.Data.OleDb"                                     Version="6.0.0"         />
 		<PackageVersion Include="Microsoft.Extensions.DependencyModel"                  Version="6.0.0"         />
-		<PackageVersion Include="System.Text.Json"                                      Version="6.0.8"         />
+		<PackageVersion Include="System.Text.Json"                                      Version="6.0.11"         />
 		<PackageVersion Include="protobuf-net.Grpc"                                     Version="1.0.179"       />
 		<PackageVersion Include="protobuf-net.Grpc.AspNetCore"                          Version="1.0.179"       />
 		<PackageVersion Include="MySql.Data"                                            Version="8.0.32.1"      />
@@ -113,7 +113,7 @@
 
 	<!--test dependencies-->
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
-		<PackageVersion Include="System.Text.Json"                                      Version="7.0.3"         />
+		<PackageVersion Include="System.Text.Json"                                      Version="8.0.5"         />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' OR '$(TargetFramework)' == 'net7.0' OR '$(TargetFramework)' == 'net8.0' ">
@@ -123,11 +123,11 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' OR '$(TargetFramework)' == 'net8.0' ">
-		<PackageVersion Include="Npgsql"                                                Version="8.0.2"    />
+		<PackageVersion Include="Npgsql"                                                Version="8.0.5"    />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' != 'net7.0' AND '$(TargetFramework)' != 'net8.0' ">
-		<PackageVersion Include="Npgsql"                                                Version="7.0.6"         />
+		<PackageVersion Include="Npgsql"                                                Version="7.0.8"         />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' != 'net472' AND '$(TargetFramework)' != 'netcoreapp3.1' ">
